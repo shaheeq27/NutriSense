@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by data-theme on <html> (set before paint by ThemeScript). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+@theme {
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-nunito), system-ui, sans-serif;
+  --font-brand: var(--font-poppins), var(--font-nunito), sans-serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, monospace;
+
+  /* Brand */
+  --color-primary: #1b5e20;
+  --color-primary-strong: #144a18;
+  --color-secondary: #4caf50;
+  --color-accent: #ff8f3d;
+  --color-tomato: #ef5350;
+  --color-golden: #fbc02d;
+
+  /* Surfaces & text */
+  --color-cream: #fff8ec;
+  --color-paper: #fffdf8;
+  --color-sand: #f3ead8;
+  --color-sand-deep: #e4d6bb;
+  --color-line: #ece1cc;
+  --color-ink: #2b2b28;
+  --color-ink-soft: #66645b;
+  --color-mint: #e1efdf;
+  --color-peach: #ffeedd;
+  --color-on-primary: #fffdf8;
+
+  --color-glow-mint: #e6f1dd;
+  --color-glow-peach: #fde9d2;
+
+  --radius-card: 1.75rem;
+  --shadow-soft: 0 24px 50px -28px rgb(43 43 40 / 0.35);
+  --shadow-primary: 0 8px 22px -10px rgb(27 94 32 / 0.6);
+
+  --animate-rise: rise 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-scan: scan 2.4s ease-in-out infinite;
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes scan {
+    0%, 100% { top: 8%; }
+    50% { top: 88%; }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-primary: #8fcf8a;
+  --color-primary-strong: #b4e2ae;
+  --color-secondary: #6cc070;
+  --color-accent: #ffa25e;
+  --color-tomato: #f2726f;
+  --color-golden: #fcd25a;
+  --color-cream: #121510;
+  --color-paper: #1a1e18;
+  --color-sand: #262c23;
+  --color-sand-deep: #384035;
+  --color-line: #313830;
+  --color-ink: #f4efe4;
+  --color-ink-soft: #b5b6ab;
+  --color-mint: #22352a;
+  --color-peach: #3a2a1c;
+  --color-on-primary: #10200f;
+  --color-glow-mint: #1b2b1f;
+  --color-glow-peach: #2b2117;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  ::selection {
+    background: var(--color-mint);
+    color: var(--color-primary);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .brand-sense {
+    background: linear-gradient(90deg, var(--color-tomato), var(--color-accent) 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .display-soft {
+    font-variation-settings: "SOFT" 100;
+  }
+  .app-glow {
+    background:
+      radial-gradient(1200px 600px at 90% -10%, var(--color-glow-mint), transparent 60%),
+      radial-gradient(800px 500px at -10% 10%, var(--color-glow-peach), transparent 60%);
+  }
+}
+
+@layer utilities {
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @layer base {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+}

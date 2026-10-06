@@ -1,0 +1,64 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build and output artifacts
+dist/
+build/
+.next/
+out/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env*
+!.env.example
+!**/.env.example
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Python & testing caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Machine learning model weights
+*.pth
+
+# Patch leftovers & backups
+*.orig
+*.rej
+
+# Logs
+logs/
+*.log
+*-debug.log*
+
+# Vite & dev artifacts
+.cache/
+.vite/
+vite.config.*.timestamp-*
+.tmp-*
+.claude-replay.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Platform-managed state
+/.figma/design-context/
+/.plugins/
+/.opencode-skills/

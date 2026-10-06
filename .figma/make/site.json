@@ -1,0 +1,11 @@
+{
+  "title": "NutriSense",
+  "description": "Nutrition That Makes Sense. A personal AI nutrition platform: goals, daily plan, nutrition data, progress, and insights.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
