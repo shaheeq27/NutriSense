@@ -1,7 +1,10 @@
-import pytest
+from unittest.mock import Mock
+
 import httpx
-from unittest.mock import Mock, patch
-from app.providers.food_data.openfoodfacts import OpenFoodFactsProvider, OFFProviderError
+import pytest
+
+from app.providers.food_data.openfoodfacts import OFFProviderError, OpenFoodFactsProvider
+
 
 @pytest.fixture
 def mock_client():

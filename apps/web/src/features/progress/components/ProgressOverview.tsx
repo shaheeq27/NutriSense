@@ -15,7 +15,7 @@ import type { ProgressRange } from "@/types"
 import { useProgress } from "../hooks/useProgress"
 import KcalChart from "./KcalChart"
 
-const RANGES: { value: ProgressRange label: string }[] = [
+const RANGES: { value: ProgressRange; label: string }[] = [
   { value: "7d", label: "7 days" },
   { value: "30d", label: "30 days" },
   { value: "90d", label: "3 months" },

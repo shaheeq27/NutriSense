@@ -9,7 +9,7 @@ import { useCreateLog } from "../hooks/useTracking"
 import { SLOT_META, slotForHour } from "../slots"
 import SlotPicker from "./SlotPicker"
 
-type Source = { food: Food meal?: never } | { meal: PlannedMeal food?: never }
+type Source = { food: Food; meal?: never } | { meal: PlannedMeal; food?: never }
 
 type LogSheetProps = Source & {
   open: boolean

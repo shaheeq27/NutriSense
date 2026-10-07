@@ -43,7 +43,7 @@ export function useGeneratePlan() {
 export function useSwapMeal() {
   const invalidate = useInvalidatePlans()
   return useMutation({
-    mutationFn: (v: { date: string slot: Slot templateId: string }) =>
+    mutationFn: (v: { date: string; slot: Slot; templateId: string }) =>
       swapMeal(v.date, v.slot, v.templateId),
     onSuccess: invalidate,
   })

@@ -8,7 +8,7 @@ os.environ.setdefault("JWT_SECRET", "test-secret-key-at-least-32-bytes-long!!")
 os.environ.setdefault("JWT_EXPIRE_MINUTES", "5256000")
 
 from datetime import UTC, date, datetime
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 import pytest
 from fastapi.testclient import TestClient
@@ -21,8 +21,7 @@ from app.db.base import Base
 from app.db.seed import seed
 from app.db.session import get_db
 from app.main import create_app
-from app.models.user import User, UserProfile
-from app.schemas.ai_chat import ParsedIntent
+from app.models.user import User
 from app.services.ai_chat_service import AIChatService
 
 FIXED_TODAY = date(2026, 10, 2)

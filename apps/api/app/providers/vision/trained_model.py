@@ -46,10 +46,10 @@ class TrainedModelVisionProvider:
             raise VisionProviderError(f"class_to_idx.json not found adjacent to {path}")
 
         try:
-            with open(class_mapping_file, "r") as f:
+            with open(class_mapping_file) as f:
                 class_to_idx = json.load(f)
         except Exception as e:
-            raise VisionProviderError(f"Failed to read class mapping: {str(e)}")
+            raise VisionProviderError(f"Failed to read class mapping: {str(e)}") from e
 
         self._idx_to_class = {v: k for k, v in class_to_idx.items()}
         num_classes = len(self._idx_to_class)
@@ -68,7 +68,7 @@ class TrainedModelVisionProvider:
             model.eval()
             self._model = model
         except Exception as e:
-            raise VisionProviderError(f"Failed to load trained model: {str(e)}")
+            raise VisionProviderError(f"Failed to load trained model: {str(e)}") from e
 
     def identify(self, image: bytes, filename: str | None, labels: list[str]) -> list[VisionGuess]:
         if not image:
@@ -79,11 +79,7 @@ class TrainedModelVisionProvider:
         try:
             img = Image.open(io.BytesIO(image)).convert("RGB")
         except Exception as e:
-            # Revert to returning an empty array or maybe we can raise VisionProviderError.
-            # "invalid/corrupt image is handled correctly" - if it can't open, returning empty array makes sense or raising error. 
-            # The prompt says: "raise a clear provider error when inference itself fails" 
-            # I will just raise the error.
-            raise VisionProviderError(f"Failed to decode image: {str(e)}")
+            raise VisionProviderError(f"Failed to decode image: {str(e)}") from e
 
         try:
             with torch.no_grad():
@@ -92,7 +88,7 @@ class TrainedModelVisionProvider:
                 probs = torch.nn.functional.softmax(outputs, dim=1)[0]
                 confidence, pred_idx = torch.max(probs, 0)
         except Exception as e:
-            raise VisionProviderError(f"Model inference failed: {str(e)}")
+            raise VisionProviderError(f"Model inference failed: {str(e)}") from e
 
         label = self._idx_to_class[pred_idx.item()]
         

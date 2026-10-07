@@ -6,5 +6,5 @@ export const userEndpoints = {
   update: (body: Partial<Pick<User, "name" | "email">>) =>
     api.patch<User>("/users/me", body),
   saveProfile: (body: Profile) =>
-    api.put<{ profile: Profile targets: Targets }>("/users/me/profile", body),
+    api.put<{ profile: Profile; targets: Targets }>("/users/me/profile", body),
 }

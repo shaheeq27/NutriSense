@@ -1,12 +1,13 @@
+from unittest.mock import patch
+
 import httpx
 import pytest
-from unittest.mock import MagicMock, patch
 
 from app.core.config import Settings
 from app.providers.food_data.usda import USDAProviderError
 from app.schemas.food import FoodOut
-from app.services.food_service import FoodService
 from app.services import nutrition_service
+from app.services.food_service import FoodService
 
 USDA_BRINJAL_SEARCH_ITEM = {
     "fdcId": 169228,

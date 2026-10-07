@@ -29,7 +29,6 @@ export const createLogSchema = z
         .length === 1,
     {
       message: "Choose exactly one food source",
-      path: ["food_id"],
     },
   )
 

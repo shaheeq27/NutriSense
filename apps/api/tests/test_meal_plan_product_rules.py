@@ -1,6 +1,11 @@
 """Tests for meal plan product rules: no auto-template injection, strict separation from tracking."""
 from datetime import timedelta
 
+import pytest
+
+from app.core.exceptions import NotFound
+from app.models.user import User
+from app.schemas.tracking import LogCreate
 from app.services.meal_planning_service import MealPlanningService
 from app.services.tracking_service import TrackingService
 
@@ -20,8 +25,6 @@ def test_get_day_empty_returns_no_meals(db, user, fixed_clock):
     assert day.meals == []
     assert day.total_kcal == 0
 
-
-from app.schemas.tracking import LogCreate
 
 def test_tracking_does_not_create_planned_meal(db, user, fixed_clock):
     """Logging a food through tracking must NOT cause it to appear in the meal plan."""
@@ -142,10 +145,6 @@ def test_window_returns_only_explicit_items(db, user, fixed_clock):
     # Day after: empty
     assert w.days[2].meals == []
 
-
-import pytest
-from app.core.exceptions import NotFound
-from app.models.user import User
 
 def test_deleting_planned_meal(db, user, fixed_clock):
     """Removing a planned meal completely deletes it."""

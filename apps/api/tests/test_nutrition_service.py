@@ -1,4 +1,5 @@
 from app.schemas.food import FoodOut
+from app.schemas.nutrition import CalculateRequest
 from app.services import nutrition_service as ns
 
 EGG = FoodOut(id=1, slug="boiled-egg", name="Boiled Egg", tag="Eggs", unit="egg", kcal=78, protein=6, carbs=0.6,
@@ -68,9 +69,12 @@ def test_parse_with_lookup(db):
     assert r.items[2].food.estimated
     assert r.totals.kcal == 156 + 200 + r.items[2].nutrition.kcal
 
-from app.schemas.nutrition import CalculateRequest, NutritionFacts
 
-APPLE_100G = FoodOut(id=2, slug="apple-100g", name="Apple", tag="Fruit", unit="100 g", kcal=52, protein=0.3, carbs=13.8, fat=0.2, fiber=2.4, sugar=10.4, sodium=1)
+APPLE_100G = FoodOut(
+    id=2, slug="apple-100g", name="Apple", tag="Fruit", unit="100 g",
+    kcal=52, protein=0.3, carbs=13.8, fat=0.2, fiber=2.4, sugar=10.4, sodium=1
+)
+
 
 def test_scale_by_portion_grams():
     f = ns.scale(APPLE_100G, servings=1, portion_grams=150)

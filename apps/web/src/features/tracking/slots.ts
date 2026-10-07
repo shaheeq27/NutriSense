@@ -1,6 +1,6 @@
 import type { Slot } from "@/types"
 
-export const SLOT_META: Record<Slot, { label: string icon: string }> = {
+export const SLOT_META: Record<Slot, { label: string; icon: string }> = {
   breakfast: { label: "Breakfast", icon: "🌅" },
   lunch: { label: "Lunch", icon: "☀️" },
   snack: { label: "Snack", icon: "☕" },

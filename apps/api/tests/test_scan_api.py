@@ -1,10 +1,10 @@
-import httpx
-import pytest
 from unittest.mock import patch
 
+import httpx
+import pytest
+
 from app.core.config import Settings
-from app.providers.vision.base import VisionProviderError
-from app.providers.food_data.usda import USDAProviderError
+
 
 @pytest.fixture
 def fake_settings():
@@ -222,7 +222,7 @@ def test_identify_api_uncataloged_blueberries_resolves_via_usda_search(client, f
          patch('app.services.food_service.get_settings', return_value=fake_settings), \
          patch('app.services.scan_service.get_settings', return_value=fake_settings), \
          patch('httpx.post', return_value=gemini_resp), \
-         patch('httpx.Client.get', return_value=usda_search_resp) as mock_usda_get:
+         patch('httpx.Client.get', return_value=usda_search_resp):
 
         r = client.post(
             "/api/v1/scan/identify",

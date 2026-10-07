@@ -1,7 +1,7 @@
 from functools import lru_cache
-from typing import Literal
+from typing import Any, Literal
 
-from pydantic import field_validator
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -11,13 +11,18 @@ class Settings(BaseSettings):
     APP_NAME: str = "NutriSense API"
     ENV: Literal["development", "test", "production"] = "development"
     DATABASE_URL: str = "sqlite:///./nutrisense.db"
+    DATABASE_URL_UNPOOLED: str | None = None
     APP_TIMEZONE: str = "UTC"
     JWT_SECRET: str = "change-me-in-production"
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRE_MINUTES: int = 60 * 24
     CORS_ORIGINS: list[str] = [
+        "http://localhost:3000",
+        "http://localhost:3001",
         "http://localhost:5173",
         "http://localhost:8443",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3001",
         "http://127.0.0.1:5173",
         "http://127.0.0.1:8443",
     ]
@@ -33,6 +38,21 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "INFO"
     SEED_ON_STARTUP: bool = True
     ENABLE_OPEN_FOOD_FACTS: bool = False
+
+    @model_validator(mode="before")
+    @classmethod
+    def _adjust_production_defaults(cls, data: Any) -> Any:
+        if isinstance(data, dict):
+            if data.get("ENV") == "production" and "SEED_ON_STARTUP" not in data:
+                data["SEED_ON_STARTUP"] = False
+        return data
+
+    @model_validator(mode="after")
+    def _validate_production(self) -> "Settings":
+        if self.ENV == "production":
+            if not self.JWT_SECRET or self.JWT_SECRET == "change-me-in-production":
+                raise ValueError("JWT_SECRET must be explicitly set to a secure secret in production")
+        return self
 
     @field_validator("CORS_ORIGINS", mode="before")
     @classmethod

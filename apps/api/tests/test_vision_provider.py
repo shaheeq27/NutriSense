@@ -10,7 +10,6 @@ from app.providers.vision.base import VisionGuess
 from app.providers.vision.gemini import GeminiVisionProvider, _guess_mime, _parse
 from app.providers.vision.stub import StubVisionProvider
 
-
 # ── _guess_mime ────────────────────────────────────────────────────────────
 
 
@@ -288,6 +287,7 @@ class TestProviderCalibration:
         }
         with patch.dict("os.environ", env, clear=False):
             from importlib import reload
+
             import app.core.config as cfg
             cfg.get_settings.cache_clear()
             reload(cfg)
@@ -305,6 +305,7 @@ class TestProviderCalibration:
         }
         with patch.dict("os.environ", env, clear=False):
             from importlib import reload
+
             import app.core.config as cfg
             cfg.get_settings.cache_clear()
             reload(cfg)
@@ -329,7 +330,9 @@ class TestProviderCalibration:
             provider.identify(b"image", "food.jpg", ["apple"])
             called_url = str(mock_post.call_args[0][0])
             assert "models/gemini-3.5-flash:generateContent" in called_url
-            assert "key=secret-key" in called_url
+            assert "key=secret-key" not in called_url
+            headers = mock_post.call_args[1].get("headers") or {}
+            assert headers.get("x-goog-api-key") == "secret-key"
 
     def test_identify_secret_redaction_in_error(self):
         secret_key = "super-secret-api-key-999"

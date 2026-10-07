@@ -44,8 +44,11 @@ Rules:
 2. If the image is ambiguous or you cannot confidently identify the food, return an empty array [].
 3. Food identity rules:
    - If the food matches one of the candidate slugs in the provided list, use that exact candidate slug as the "label".
-   - If the food is clearly recognizable real food but NOT in the provided candidate list (e.g. "cucumber", "carrot", "avocado", "blueberries", "oats"), provide a clean, concise, normalized lowercase food name as the "label".
-   - NEVER return arbitrary prose, full sentences, or vague descriptors like "brown food in a bowl", "plate with food", "mixed meal". Return ONLY the specific food name.
+   - If the food is clearly recognizable real food but NOT in the provided candidate list
+     (e.g. "cucumber", "carrot", "avocado", "blueberries", "oats"), provide a clean, concise,
+     normalized lowercase food name as the "label".
+   - NEVER return arbitrary prose, full sentences, or vague descriptors like "brown food in a bowl",
+     "plate with food", "mixed meal". Return ONLY the specific food name.
 4. Return a JSON array of objects ranking the best-matching food identities.
    Each object MUST have exactly two keys:
      "label"      – the candidate slug or normalized food name.
@@ -102,10 +105,10 @@ class GeminiVisionProvider:
         }
 
         endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{self._model}:generateContent"
-        url = f"{endpoint}?key={self._api_key}"
+        headers = {"x-goog-api-key": self._api_key}
 
         try:
-            resp = httpx.post(url, json=payload, timeout=self._timeout)
+            resp = httpx.post(endpoint, json=payload, headers=headers, timeout=self._timeout)
             resp.raise_for_status()
         except httpx.HTTPStatusError as exc:
             _safe = str(exc).replace(self._api_key, "REDACTED")
@@ -121,7 +124,7 @@ class GeminiVisionProvider:
             raw_text = data["candidates"][0]["content"]["parts"][0]["text"]
         except (KeyError, IndexError):
             logger.warning("Unexpected Gemini response structure")
-            raise VisionProviderError("Malformed response from Gemini API")
+            raise VisionProviderError("Malformed response from Gemini API") from None
 
         return _parse(raw_text, frozenset(labels))
 

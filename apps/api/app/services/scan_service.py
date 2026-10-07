@@ -1,13 +1,14 @@
 """Food identification from an image. Identification only - nutrition comes from nutrition_service."""
 
 import logging
+
 from sqlalchemy.orm import Session
 
+from app.core.config import get_settings
 from app.core.exceptions import BusinessRuleViolation
 from app.providers.vision.base import VisionProvider, VisionProviderError
 from app.schemas.scan import ScanCandidate, ScanResponse
 from app.services.food_service import FoodService
-from app.core.config import get_settings
 
 logger = logging.getLogger(__name__)
 

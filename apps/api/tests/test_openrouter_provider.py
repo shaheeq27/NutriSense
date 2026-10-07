@@ -6,7 +6,7 @@ from unittest.mock import patch
 import httpx
 import pytest
 
-from app.providers.vision.base import VisionGuess, VisionProviderError
+from app.providers.vision.base import VisionProviderError
 from app.providers.vision.openrouter import OpenRouterVisionProvider, _guess_mime, _parse
 
 # ── _guess_mime ────────────────────────────────────────────────────────────

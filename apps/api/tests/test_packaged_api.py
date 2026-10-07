@@ -1,10 +1,9 @@
-import pytest
-from unittest.mock import patch, MagicMock
-from fastapi.testclient import TestClient
+from unittest.mock import patch
 
-from app.main import app
-from app.schemas.food import FoodOut
+import pytest
+
 from app.providers.food_data.openfoodfacts import OFFProviderError
+from app.schemas.food import FoodOut
 
 # Ensure we bypass authentication for these public/read endpoints if auth is required, 
 # or just use the dependency override if necessary.

@@ -193,6 +193,6 @@ class OpenRouterVisionProvider:
             raw_text = data["choices"][0]["message"]["content"]
         except (KeyError, IndexError):
             logger.warning("Unexpected OpenRouter response structure")
-            raise VisionProviderError("Malformed response from OpenRouter API")
+            raise VisionProviderError("Malformed response from OpenRouter API") from None
 
         return _parse(raw_text, frozenset(labels))

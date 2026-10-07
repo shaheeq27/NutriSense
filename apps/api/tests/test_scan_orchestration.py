@@ -1,9 +1,10 @@
-import pytest
 from unittest.mock import MagicMock
 
-from app.services.scan_service import ScanService
+import pytest
+
 from app.providers.vision.base import VisionGuess, VisionProviderError
 from app.schemas.food import FoodOut
+from app.services.scan_service import ScanService
 
 
 def _make_food(slug):

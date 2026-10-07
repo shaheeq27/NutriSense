@@ -15,7 +15,6 @@ import httpx
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
-from app.core.exceptions import BusinessRuleViolation
 from app.models.user import User
 from app.schemas.ai_chat import AIChatResponse, MealSuggestion, ParsedIntent
 from app.schemas.common import SLOTS
@@ -272,7 +271,6 @@ class AIChatService:
         All nutrition data comes from FoodService/NutritionService — never invented.
         """
         from app.services.meal_planning_service import (
-            DIET_RANK,
             extract_allergens,
             normalize_allergen,
         )
@@ -292,7 +290,6 @@ class AIChatService:
                 continue
             for food in results.items:
                 # Check diet compatibility
-                food_tag_lower = food.tag.lower() if food.tag else ""
                 # Skip non-vegetarian foods for vegetarian/vegan users
                 if diet_style in ("vegetarian", "vegan"):
                     meat_terms = {"chicken", "mutton", "beef", "pork", "lamb",

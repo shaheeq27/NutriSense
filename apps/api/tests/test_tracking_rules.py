@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import UTC, timedelta
 
 import pytest
 
@@ -36,12 +36,13 @@ def test_future_planned_meal_cannot_be_logged(db, user, fixed_clock):
         TrackingService(db).log(user, LogCreate(slot="lunch", planned_meal_id=day.meals[0].id))
 
 def test_timezone_boundary_handling(db, user):
-    from datetime import datetime, timezone, timedelta
+    from datetime import datetime, timedelta
     from zoneinfo import ZoneInfo
+
     from app.core import clock
     
     # 2026-10-03 21:16:00 UTC is 2026-10-04 02:46:00 in Asia/Kolkata
-    boundary_utc = datetime(2026, 10, 3, 21, 16, 0, tzinfo=timezone.utc)
+    boundary_utc = datetime(2026, 10, 3, 21, 16, 0, tzinfo=UTC)
     
     # Mock clock to return the local time in Asia/Kolkata
     clock.set_clock(lambda: boundary_utc.astimezone(ZoneInfo("Asia/Kolkata")))

@@ -1,4 +1,3 @@
-from datetime import timedelta
 from app.schemas.tracking import LogCreate
 from app.services.progress_service import ProgressService
 from app.services.tracking_service import TrackingService

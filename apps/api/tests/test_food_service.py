@@ -1,9 +1,11 @@
-import pytest
 from unittest.mock import MagicMock, patch
 
-from app.services.food_service import FoodService
-from app.schemas.food import FoodOut
+import pytest
+
 from app.providers.food_data.usda import USDAProviderError
+from app.schemas.food import FoodOut
+from app.services.food_service import FoodService
+
 
 def _make_food(slug, name, source):
     return FoodOut(id=1, slug=slug, name=name, kcal=50, protein=1, carbs=2, fat=3, fiber=4, sugar=5, sodium=6, tag="test", unit="serving", source=source)

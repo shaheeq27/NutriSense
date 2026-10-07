@@ -1,7 +1,29 @@
+# Virtual environments & dependencies
 .venv
+venv
+env
+
+# Python cache & bytecode
 __pycache__
+*.py[cod]
+*$py.class
+*.egg-info
+
+# Databases & local state
 *.db
+*.sqlite
+*.sqlite3
+
+# Environment variables & secrets
 .env
+.env.*
+!.env.example
+
+# Testing & quality caches
 .pytest_cache
 .ruff_cache
-*.egg-info
+.coverage
+htmlcov
+
+# Model weights (fetched or mounted at runtime)
+*.pth

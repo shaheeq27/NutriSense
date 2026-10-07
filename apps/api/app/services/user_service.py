@@ -42,6 +42,7 @@ class UserService:
         self.repo.save(user)
         try:
             from datetime import timedelta
+
             from app.services.meal_planning_service import MealPlanningService, window
             w_start, w_end = window()
             planner = MealPlanningService(self.db)

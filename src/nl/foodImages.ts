@@ -70,19 +70,16 @@ export const FOOD_IMAGES_BY_SLUG: Record<string, FoodImageConfig> = {
     source: "tamingtwins",
   },
   "chicken-rice-bowl": {
-    imageUrl:
-      "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120",
-    source: "facebook-tropical-chicken",
+    imageUrl: u("1512621776951-a57141f2eefd"),
+    source: "unsplash-200",
   },
   "chicken-curry-rice": {
-    imageUrl:
-      "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120",
-    source: "facebook-tropical-chicken",
+    imageUrl: u("1603894584373-5ac82b2ae398"),
+    source: "unsplash-200",
   },
   "chicken-curry-and-rice": {
-    imageUrl:
-      "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120",
-    source: "facebook-tropical-chicken",
+    imageUrl: u("1603894584373-5ac82b2ae398"),
+    source: "unsplash-200",
   },
   "paneer-butter-masala": {
     imageUrl: u("1631452180519-c014fe946bc7"),
@@ -181,9 +178,8 @@ export const FOOD_IMAGES_BY_SLUG: Record<string, FoodImageConfig> = {
     source: "instamart",
   },
   "aloo-paratha": {
-    imageUrl:
-      "https://scontent-bom5-1.cdninstagram.com/v/t51.75761-15/500531496_18057623354211166_6364767047416642948_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=oEnF_2wNhQsQ7kNvwGCop9A&_nc_oc=AdpOA1qWgYl9BRVMxeSTyqJ4tvLv2kkEMLyICrQ6SIMVPTDdLka4Xejwp-ebV0fLmC4&_nc_zt=23&_nc_ht=scontent-bom5-1.cdninstagram.com&_nc_gid=12PyBO5AA1W-XUF3IHg2Ig&_nc_ss=7ba02&oh=00_AQO5MAZH4Pqq0EeKxOhSE7ccu4cLXvYGC3OTHiZ7QBMehQ&oe=6AC86A87",
-    source: "instagram",
+    imageUrl: u("1589301760014-d929f3979dbc"),
+    source: "unsplash-200",
   },
   "pav-bhaji": {
     imageUrl:

@@ -11,7 +11,8 @@ config = context.config
 if config.config_file_name is not None:
     fileConfig(config.config_file_name, disable_existing_loggers=False)
 
-config.set_main_option("sqlalchemy.url", get_settings().DATABASE_URL)
+settings = get_settings()
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URL_UNPOOLED or settings.DATABASE_URL)
 target_metadata = Base.metadata
 
 

@@ -201,7 +201,7 @@ export interface ProgressPoint {
 export interface ProgressSeries {
   range: ProgressRange
   points: ProgressPoint[]
-  averages: { kcal: number protein: number }
+  averages: { kcal: number; protein: number }
   streak_days: number
   adherence_pct: number
 }
@@ -211,9 +211,9 @@ export interface Recommendation {
   kind: "tip" | "warning" | "win" | string
   title: string
   body: string
-  action?: { label: string href: string } | null
+  action?: { label: string; href: string } | null
 }
 
 export interface ApiErrorBody {
-  error: { code: string message: string details?: unknown }
+  error: { code: string; message: string; details?: unknown }
 }

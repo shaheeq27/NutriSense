@@ -1,11 +1,13 @@
 import io
 import json
-import pytest
 from pathlib import Path
+
+import pytest
 from PIL import Image
 
-from app.providers.vision.trained_model import TrainedModelVisionProvider
 from app.providers.vision.base import VisionProviderError
+from app.providers.vision.trained_model import TrainedModelVisionProvider
+
 
 # Helper to create a dummy model directory
 @pytest.fixture
@@ -89,14 +91,14 @@ def test_model_loaded_once_and_cached(dummy_model_dir, mock_torch):
     assert provider._model is None
     
     # First call
-    results1 = provider.identify(img_bytes, "test.jpg", ["apple-pie"])
+    provider.identify(img_bytes, "test.jpg", ["apple-pie"])
     assert provider._model is not None
     assert provider._model.eval_called
     
     model_ref = provider._model
     
     # Second call
-    results2 = provider.identify(img_bytes, "test.jpg", ["apple-pie"])
+    provider.identify(img_bytes, "test.jpg", ["apple-pie"])
     assert provider._model is model_ref
 
 def test_inference_returns_label_and_confidence(dummy_model_dir, mock_torch):

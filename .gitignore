@@ -62,3 +62,7 @@ Thumbs.db
 /.figma/design-context/
 /.plugins/
 /.opencode-skills/
+
+# Neon CLI local state & context
+.neon
+.neon/

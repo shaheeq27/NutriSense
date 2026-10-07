@@ -1,10 +1,12 @@
-import pytest
 from unittest.mock import MagicMock
 
-from app.services.scan_service import ScanService
-from app.schemas.food import FoodOut
-from app.providers.vision.base import VisionGuess
+import pytest
+
 from app.providers.food_data.usda import USDAProviderError
+from app.providers.vision.base import VisionGuess
+from app.schemas.food import FoodOut
+from app.services.scan_service import ScanService
+
 
 def _make_food(slug, name, source):
     return FoodOut(id=1, slug=slug, name=name, kcal=50, protein=1, carbs=2, fat=3, fiber=4, sugar=5, sodium=6, tag="test", unit="serving", source=source)
@@ -32,8 +34,10 @@ def test_identify_resolves_through_food_service():
     local_banana = _make_food("banana", "Banana", "local")
     
     def mock_resolve(slug):
-        if slug == "apple": return usda_apple
-        if slug == "banana": return local_banana
+        if slug == "apple":
+            return usda_apple
+        if slug == "banana":
+            return local_banana
         return None
         
     scan_service.foods.resolve_vision_slug.side_effect = mock_resolve
@@ -72,7 +76,8 @@ def test_identify_skips_unresolved_candidates():
     ]
     
     def mock_resolve(slug):
-        if slug == "apple": return _make_food("apple", "Apple", "local")
+        if slug == "apple":
+            return _make_food("apple", "Apple", "local")
         return None
         
     scan_service.foods.resolve_vision_slug.side_effect = mock_resolve

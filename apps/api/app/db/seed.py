@@ -26,7 +26,7 @@ _IMG = {
     "masala-dosa": "https://vismaifood.com/storage/app/uploads/public/8b4/19e/427/thumb__1200_0_0_0_auto.jpg",
     "mutton-biryani": "https://www.foodiaq.com/wp-content/uploads/2025/05/Mutton-biryani.jpg",
     "idli-sambar": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/InstamartAssets/Receipes/sambhar_idli.webp",
-    "aloo-paratha": "https://scontent-bom5-1.cdninstagram.com/v/t51.75761-15/500531496_18057623354211166_6364767047416642948_n.jpg?stp=cmp1_dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=oEnF_2wNhQsQ7kNvwGCop9A&_nc_oc=AdpOA1qWgYl9BRVMxeSTyqJ4tvLv2kkEMLyICrQ6SIMVPTDdLka4Xejwp-ebV0fLmC4&_nc_zt=23&_nc_ht=scontent-bom5-1.cdninstagram.com&_nc_gid=12PyBO5AA1W-XUF3IHg2Ig&_nc_ss=7ba02&oh=00_AQO5MAZH4Pqq0EeKxOhSE7ccu4cLXvYGC3OTHiZ7QBMehQ&oe=6AC86A87",
+    "aloo-paratha": _U.format("1589301760014-d929f3979dbc"),
     "pani-puri": "https://cdn1.foodviva.com/static-content/food-images/snacks-recipes/pani-puri/pani-puri.jpg",
     "samosa": _U.format("1601050690597-df0568f70950"),
     "pasta-alfredo": "https://girlwiththeironcast.com/wp-content/uploads/2022/04/blackened-chicken-alfredo-9.jpg",
@@ -48,11 +48,9 @@ _IMG = {
     "omelette": "https://shivanilovesfood.com/wp-content/uploads/2025/02/Masala-Omelette-4.jpg",
     "veg-hakka-noodles": "https://www.seriouseats.com/thmb/hmLAHsyg1riGn2Iy6u0slpXppxM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20260707-SEA-SpicySourNoodles-CaleyEllenburg-HERO-f780cb9174fd4a278a9441030ed82480.jpg",
     "chicken-noodle-soup": "https://www.seriouseats.com/thmb/hmLAHsyg1riGn2Iy6u0slpXppxM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20260707-SEA-SpicySourNoodles-CaleyEllenburg-HERO-f780cb9174fd4a278a9441030ed82480.jpg",
-    "chicken-rice-bowl": "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120",
-    "chicken-curry-rice": "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120",
+    "chicken-rice-bowl": _U.format("1512621776951-a57141f2eefd"),
+    "chicken-curry-rice": _U.format("1603894584373-5ac82b2ae398"),
 }
-
-_FB_CHICKEN_RICE = "https://scontent-bom5-2.xx.fbcdn.net/v/t39.99422-6/823034431_1397814112553344_3284921353362447729_n.png?stp=dst-jpg_tt6&cstp=mx720x1080&ctp=p600x600&_nc_cat=104&ccb=1-7&_nc_sid=6376bf&_nc_ohc=p7aaaHA7TL0Q7kNvwHUorsl&_nc_oc=Adp3ekQhkUv9KiNx17eL4uQEjduNyJzZ7TV0JzydZmc5bkN6P5phRoslX834hD9Vng4&_nc_zt=14&_nc_ht=scontent-bom5-2.xx&_nc_gid=WQaA0p1raLQYbS9AqYva0Q&_nc_ss=7b20f&oh=00_AQNTssxGuXmY7iIDhJdjCp3_GuKhePSO4lh-Kqhz2fYi6g&oe=6ACAB120"
 
 # (slot, name, description, tags, why, kcal, protein, carbs, fat, diet, allergens, image_id)
 MEAL_TEMPLATES: list[tuple] = [
@@ -68,7 +66,7 @@ MEAL_TEMPLATES: list[tuple] = [
      "Low fat with plant protein from the sambar.", 300, 11, 56, 3, "vegan", [], None),
     ("lunch", "Chicken Rice Bowl", "Grilled chicken, jeera rice, cucumber and mint yoghurt.",
      "Balanced • High Protein", "Fits your lunch target and supports your selected nutrition goal.",
-     620, 38, 72, 18, "any", ["dairy"], _FB_CHICKEN_RICE),
+     620, 38, 72, 18, "any", ["dairy"], "1512621776951-a57141f2eefd"),
     ("lunch", "Chicken Wrap", "Whole-wheat wrap with grilled chicken and salad.", "Lighter • Similar protein",
      "Lighter with similar protein.", 520, 34, 50, 18, "any", ["gluten"], "1626700051175-6818013e1d4f"),
     ("lunch", "Paneer Rice Bowl", "Tikka paneer, rice, peppers and onions.", "Similar calories • Vegetarian",
@@ -94,7 +92,7 @@ MEAL_TEMPLATES: list[tuple] = [
     ("dinner", "Grilled Salmon + Veg", "Salmon fillet with broccoli and sweet potato.", "Omega-3 • Protein",
      "Omega-3 rich and satisfying.", 580, 44, 37, 28, "any", ["fish"], None),
     ("dinner", "Chicken Curry + Rice", "Home-style chicken curry with a cup of rice.", "Comfort • Protein",
-     "A classic, balanced dinner.", 585, 32, 55, 25, "any", [], _FB_CHICKEN_RICE),
+     "A classic, balanced dinner.", 585, 32, 55, 25, "any", [], "1603894584373-5ac82b2ae398"),
     ("dinner", "Tofu Stir-fry + Brown Rice", "Tofu with mixed vegetables and brown rice.", "Vegan • Protein",
      "Plant protein with whole grains.", 520, 28, 62, 16, "vegan", ["soy"], None),
     ("dinner", "Khichdi + Curd", "Moong dal khichdi with a bowl of curd.", "Light • Comfort",

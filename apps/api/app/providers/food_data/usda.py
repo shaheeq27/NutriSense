@@ -5,7 +5,6 @@ Results are not persisted; their `id` is None and `source` is "usda". Values are
 
 import logging
 import re
-from typing import Dict
 
 import httpx
 
@@ -24,7 +23,7 @@ _N = {
     "1008": "kcal", "1003": "protein", "1005": "carbs", "1004": "fat", "1079": "fiber", "2000": "sugar", "1093": "sodium"
 }
 
-CURATED_RAW_FOODS: Dict[str, int] = {
+CURATED_RAW_FOODS: dict[str, int] = {
     "banana": 173944,
     "apple": 171688,
     "orange": 169097,

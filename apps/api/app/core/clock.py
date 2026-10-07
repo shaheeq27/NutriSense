@@ -6,7 +6,9 @@ Services call `clock.today()` / `clock.now()`; tests swap the implementation wit
 from collections.abc import Callable
 from datetime import date, datetime
 from zoneinfo import ZoneInfo
+
 from app.core.config import get_settings
+
 
 def _default_now() -> datetime:
     tz = ZoneInfo(get_settings().APP_TIMEZONE)

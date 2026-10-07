@@ -64,9 +64,10 @@ def test_meal_planning_add_item_portion_grams(db, user, fixed_clock):
     assert snack[0].protein == 42.0
 
 def test_add_item_request_validation():
-    from app.schemas.meal_plan import AddItemRequest
-    from pydantic import ValidationError
     import pytest
+    from pydantic import ValidationError
+
+    from app.schemas.meal_plan import AddItemRequest
     
     with pytest.raises(ValidationError):
         AddItemRequest(food_id=1, servings=2, portion_grams=150)

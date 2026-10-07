@@ -1,6 +1,7 @@
 import logging
-import httpx
 import math
+
+import httpx
 
 from app.core.exceptions import DomainError
 from app.schemas.food import FoodOut

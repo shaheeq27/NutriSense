@@ -24,6 +24,6 @@ export const foodEndpoints = {
 }
 
 export const bmiEndpoints = {
-  calculate: (body: { height_cm: number weight_kg: number }) =>
+  calculate: (body: { height_cm: number; weight_kg: number }) =>
     api.post<BmiResult>("/bmi", body),
 }

@@ -9,8 +9,8 @@ from sqlalchemy.orm import Session
 from app.core.config import get_settings
 from app.core.exceptions import NotFound
 from app.providers.food_data.local import LocalFoodProvider
-from app.providers.food_data.usda import UsdaFoodProvider
 from app.providers.food_data.openfoodfacts import OpenFoodFactsProvider
+from app.providers.food_data.usda import UsdaFoodProvider
 from app.schemas.food import FoodOut, FoodSearchResponse
 from app.services import nutrition_service
 from app.services.text import norm, stem

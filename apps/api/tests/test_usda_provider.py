@@ -1,8 +1,10 @@
-import httpx
-import pytest
 from unittest.mock import patch
 
-from app.providers.food_data.usda import UsdaFoodProvider, USDAProviderError, CURATED_RAW_FOODS
+import httpx
+import pytest
+
+from app.providers.food_data.usda import UsdaFoodProvider, USDAProviderError
+
 
 def test_curated_slug_maps_to_fdc_id():
     provider = UsdaFoodProvider("dummy_key")
