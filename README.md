@@ -16,6 +16,10 @@
   </p>
 
   <p>
+    <a href="https://nutri-sense-teal.vercel.app/"><img src="https://img.shields.io/badge/🚀_LIVE_DEMO-Try_NutriSense-16A34A?style=for-the-badge" alt="Try NutriSense live"/></a>
+  </p>
+
+  <p>
     <a href="#-what-you-can-do">Explore Features</a> ·
     <a href="#-how-it-works">How It Works</a> ·
     <a href="#-getting-started">Get Started</a> ·
@@ -23,6 +27,22 @@
   </p>
 
   <em>Understand your food. Make informed choices. Build a healthier routine — one meal at a time.</em>
+</div>
+
+---
+
+## 🌐 Try NutriSense
+
+Curious to see it in action? Explore the deployed application:
+
+<div align="center">
+
+  <a href="https://nutri-sense-teal.vercel.app/">
+    <img src="https://img.shields.io/badge/OPEN_NUTRISENSE-Live_Application-16A34A?style=for-the-badge&logo=vercel&logoColor=white" alt="Open NutriSense live application"/>
+  </a>
+
+  <p><a href="https://nutri-sense-teal.vercel.app/"><strong>https://nutri-sense-teal.vercel.app/</strong></a></p>
+
 </div>
 
 ---
